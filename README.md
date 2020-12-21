@@ -4,6 +4,8 @@
 1. Unity: 2019.3.1f1
 2. Headset: rift S, quest, quest 2
 3. Camera: SR300, D415/435
+4. SDK, NDK, Gradle: https://mailnwpueducn-my.sharepoint.com/:f:/g/personal/zhl93_mail_nwpu_edu_cn/EldNAhoPy65Gse1CREszGpsBshYKm0pBhLtTH2mAngDKQQ?e=00O5Fc
+5. JDK: jdk1.8.0_271, or so
 
 ## The whole project refers to:
 https://github.com/GeorgeAdamon/quest-realsense
@@ -36,8 +38,3 @@ If point cloud is still missing, try adding OnEnable() in Start function in RSDe
 
 # Demo video
 Please find it in the Repository.
-
-
-
-
-
