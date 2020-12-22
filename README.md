@@ -7,6 +7,17 @@
 4. SDK, NDK, Gradle: https://mailnwpueducn-my.sharepoint.com/:f:/g/personal/zhl93_mail_nwpu_edu_cn/EldNAhoPy65Gse1CREszGpsBshYKm0pBhLtTH2mAngDKQQ?e=00O5Fc
 5. JDK: jdk1.8.0_271, or so
 
+
+## Key features:
+1. The depth camera can be opened on the mobile VR platform.
+2. A unity 3d project is provided, compatible with Oculus Quest/Quest 2, Rift/Rift S.
+3. The depth camera includes SR300 and D400. Minor revision is needed for L500.
+4. Add the AVPRO plugin
+5. The default demo enables hand tacking and point cloud rendering.
+
+
+
+
 ## The whole project refers to:
 https://github.com/GeorgeAdamon/quest-realsense
 
@@ -31,9 +42,22 @@ Open generated aar lib with window zip program, open AndroidManifest.xml, change
 
 
 ### No poitn cloud renered in Quest app
-First, make sure all other parts are correct. Make sure the material of RScamera is "Pointcloud" rather than "Geom".
+First, make sure all other parts are correct. Make sure the material of RScamera is "Pointcloud" rather than "PointcloudGeom".
 
 If point cloud is still missing, try adding OnEnable() in Start function in RSDevice.cs, since some functions cannot be auto called in Android Platform (On Win, RS camera intializatioin is auto called)
+
+
+### Configuration of Quest 2 and changes comapred with quest 1
+1. Hand tracking is set in the ovrcamerarig (1st gen), but we should drag the OVRHandPrefab to handAnchor and select "quest 2" in ovrcamerarig settings (2nd gen).
+2. If the controller is not recognised as the 2nd gen, manually set the variable "headset" in "OVRControllerHelper.cs" (OVRHandPrefab) to "activeControllerType = ControllerType.Quest2;" (line 81).
+3. To use hand trackig,  the passthrough mode must be enabled in headset. On starting the application, will see a popup window that requires to enable passthrough mode. Tap the side of head two times as the popup window describes to enable it.
+
+
+
+
+
+
+
 
 
 # Demo video
